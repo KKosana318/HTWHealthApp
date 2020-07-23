@@ -13,7 +13,9 @@ class PatientList extends React.Component {
       firestore.collection('users').get()
       //you 'get' data as a snapshot
       .then(snapshot =>{
+        //makes an array of users
         const users =[]  
+        //iterates through them and pushes them
         snapshot.forEach(doc => {
               const data = doc.data()
               users.push(data)

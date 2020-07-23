@@ -22,13 +22,8 @@ const Header = ({ currentUser }) => (
       <OptionContainer to='/user'>
         User
       </OptionContainer>
-<<<<<<< Updated upstream
-      <OptionContainer to='/home'>
-        Profilee
-=======
       <OptionContainer to='/patient'>
         Patient
->>>>>>> Stashed changes
       </OptionContainer>
       {
         currentUser ?
