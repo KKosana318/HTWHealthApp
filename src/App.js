@@ -10,14 +10,16 @@ import TestPage from './pages/test-page/test-page.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import UserPage from './pages/user-page/user-page.component';
 
-import {auth, createUserProfileDocument} from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+
+
 //import firebase from './firebase/firebase.utils';
 
 import Header from './components/Header/header.component';
 
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super();
 
     this.state = {
@@ -27,14 +29,14 @@ class App extends React.Component {
 
   unsubscribeFromAuth = null
 
-  componentDidMount(){
+  componentDidMount() {
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-      if(userAuth){
+      if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot(snapShot => {
           this.setState({
-            currentUser:{
+            currentUser: {
               id: snapShot.id,
               ...snapShot.data()
             }
@@ -42,20 +44,20 @@ class App extends React.Component {
 
         });
       }
-      this.setState({currentUser: userAuth});
+      this.setState({ currentUser: userAuth });
 
     });
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.unsubscribeFromAuth();
   }
 
-  render(){
-    return(
+  render() {
+    return (
 
-      <div>
-        <Header currentUser={this.state.currentUser}/>
+      <div className='full-site-content'>
+        <Route path='/' component={ (props) => (<Header routeProps={ props } currentUser={ this.state.currentUser } />) } />
         <Switch>
           <Route exact path='/' component={ HomePage } />
           <Route exact path='/landing' component={ LandingPage } />
@@ -64,6 +66,7 @@ class App extends React.Component {
           <Route exact path='/patient' component={ PatientPage } />
           <Route exact path='/test' component={ TestPage } />
         </Switch>
+
       </div>
     );
   }

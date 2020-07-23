@@ -14,10 +14,8 @@
     "react-google-button": "^0.7.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "save": "^2.4.0",
-    "styled-components": "^5.1.1",
-    "twilio": "^3.48.1",
-    "twilio-video": "^2.7.0"
+    "react-scroll": "^1.8.0",
+    "styled-components": "^5.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
