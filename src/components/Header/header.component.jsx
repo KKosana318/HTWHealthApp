@@ -1,32 +1,42 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import {auth} from '../../firebase/firebase.utils';
+import { auth } from '../../firebase/firebase.utils';
 
 
-import './header.styles.css';
+import { HeaderContainer, LogoContainer, BrandName, OptionsContainer, OptionContainer, AccountContainer } from './header.styles';
 
-const Header = ({currentUser}) => (
-  <div className='header'>
-
-    <div className='options'>
-      <Link className='option' to='/home'>
+const Header = ({ currentUser }) => (
+  <HeaderContainer>
+    <LogoContainer>
+      <BrandName>Brand</BrandName>
+    </LogoContainer>
+    <OptionsContainer>
+      <OptionContainer to='/home'>
         Home
-      </Link>
-      <Link className='option' to='/home'>
+      </OptionContainer>
+      <OptionContainer to='/landing'>
+        Landing
+      </OptionContainer>
+      <OptionContainer to='/signin'>
+        Signin/signup
+      </OptionContainer>
+      <OptionContainer to='/user'>
+        User
+      </OptionContainer>
+      <OptionContainer to='/home'>
         Profile
-      </Link>
+      </OptionContainer>
       {
-          currentUser ?
-          <div className='option' onClick={() => auth.signOut()}>Sign Out</div>
+        currentUser ?
+          <AccountContainer onClick={ () => auth.signOut() }>Sign Out</AccountContainer>
 
           :
-          <Link className='option' to='/signin'>
-              SIGN IN
-          </Link>
+          <AccountContainer to='/signin'>
+            Sign in
+          </AccountContainer>
       }
-    </div>
-  </div>
+    </OptionsContainer>
+  </HeaderContainer>
 );
 
 export default Header;
