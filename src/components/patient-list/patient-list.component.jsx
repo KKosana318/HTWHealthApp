@@ -1,5 +1,6 @@
 import React from 'react';
 
+ // eslint-disable-next-line 
 import { auth, firestore } from '../../firebase/firebase.utils';
 
 import './patient-list.styles.css';
