@@ -12,7 +12,8 @@ class SignUp extends React.Component {
     super();
 
     this.state = {
-      displayName: '',
+      fName: '',
+      lName: '',
       email: '',
       password: '',
       confirmPassword: ''
@@ -22,7 +23,7 @@ class SignUp extends React.Component {
   handleSubmit = async event => {
     event.preventDefault();
 
-    const { displayName, email, password, confirmPassword } = this.state;
+    const { fName, lName, email, password, confirmPassword } = this.state;
 
     if (password !== confirmPassword) {
       alert("Your passwords do not match!");
@@ -34,15 +35,16 @@ class SignUp extends React.Component {
     }
 
     try {
-      const { user } = await auth.createUserWithEmailAndPassword(
+      const { doctor } = await auth.createUserWithEmailAndPassword(
         email,
         password
       );
 
-      await createUserProfileDocument(user, { displayName });
+      await createUserProfileDocument(doctor, { fName, lName });
 
       this.setState({
-        displayName: '',
+        fName: '',
+        lName: '',
         email: '',
         password: '',
         confirmPassword: ''
@@ -59,17 +61,28 @@ class SignUp extends React.Component {
   };
 
   render() {
-    const { displayName, email, password, confirmPassword } = this.state;
+    const { fName, lName, email, password, confirmPassword } = this.state;
     return (
       <div className='sign-up'>
         
         <form className='sign-up-form' onSubmit={this.handleSubmit} autoComplete='off'>
-          <h2 className='title'>I do not have a account</h2>
+          <h2 className='title'>I do not have an account</h2>
           <span>Sign up with your email and password</span>
+          <hr/>
+          <label> First Name </label>
           <FormInput
             type='text'
-            name='displayName'
-            value={displayName}
+            name='fName'
+            value={fName}
+            onChange={this.handleChange}
+            required
+          />
+
+          <label> Last Name </label>
+          <FormInput
+            type='text'
+            name='lName'
+            value={lName}
             onChange={this.handleChange}
             required
           />

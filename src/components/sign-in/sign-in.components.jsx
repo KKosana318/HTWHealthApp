@@ -46,12 +46,8 @@ class SignIn extends React.Component{
         return(
             <div className='sign-in'>
                 
-                
-                
-                
                 <form className = 'signForm' onSubmit={this.handleSubmit}>
 
-                    
                     <br/>
                     <h2 className = 'cen'>Sign in with your email and password</h2>
                     <br/>
@@ -71,7 +67,6 @@ class SignIn extends React.Component{
                         handleChange={this.handleChange}
                         required />
                     
-
                     <br/>
                     <CustomButton type="submit"> Sign In </CustomButton>
                     <br></br>
@@ -85,8 +80,6 @@ class SignIn extends React.Component{
                     />
                     
                     </div>
-                    
-
                 </form>
             </div>
         );
