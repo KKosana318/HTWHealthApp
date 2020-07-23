@@ -22,8 +22,8 @@ const Header = ({ currentUser }) => (
       <OptionContainer to='/user'>
         User
       </OptionContainer>
-      <OptionContainer to='/home'>
-        Profilee
+      <OptionContainer to='/patient'>
+        Patients
       </OptionContainer>
       {
         currentUser ?

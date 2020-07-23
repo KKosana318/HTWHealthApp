@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './patient-profile.styles.css';
+
 export const PatientProfile = props => (
     <div className = 'patient-profile-container'>
         <Link className='option' to='/home'>

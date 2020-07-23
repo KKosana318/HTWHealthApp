@@ -4,11 +4,15 @@ import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
 import HomePage from './pages/home-page/home-page.component';
+import PatientPage from './pages/patient-page/patient-page.component';
 import LandingPage from './pages/landing-page/landing-page.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import UserPage from './pages/user-page/user-page.component';
+
 import {auth, createUserProfileDocument} from './firebase/firebase.utils';
+
 import Header from './components/Header/header.component';
+import PatientList from './components/patient-list/patient-list.component'
 
 
 class App extends React.Component {
@@ -52,11 +56,13 @@ class App extends React.Component {
 
       <div>
         <Header currentUser={this.state.currentUser}/>
+        <PatientList patients={this.state.patients}></PatientList>
         <Switch>
           <Route exact path='/' component={ HomePage } />
           <Route exact path='/landing' component={ LandingPage } />
           <Route exact path='/signin' component={ SignInAndSignUpPage } />
           <Route exact path='/user' component={ UserPage } />
+          <Route exact path='/patient' component={ PatientPage } />
         </Switch>
       </div>
     );
