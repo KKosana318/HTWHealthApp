@@ -1,0 +1,12 @@
+.sign-in-and-sign-up{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.vert {
+    border-left: 6px solid red;
+    height: 500px;
+    
+  }
