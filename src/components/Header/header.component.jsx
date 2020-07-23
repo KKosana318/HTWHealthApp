@@ -17,7 +17,7 @@ const Header = ({ currentUser }) => (
         Landing
       </OptionContainer>
       <OptionContainer to='/signin'>
-        Signin/signup
+        Sign in/Sign up
       </OptionContainer>
       <OptionContainer to='/user'>
         User

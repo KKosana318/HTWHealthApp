@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
 import HomePage from './pages/home-page/home-page.component';
+import PatientPage from './pages/patient-page/patient-page.component';
 import LandingPage from './pages/landing-page/landing-page.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import UserPage from './pages/user-page/user-page.component';
@@ -58,6 +59,7 @@ class App extends React.Component {
           <Route exact path='/landing' component={ LandingPage } />
           <Route exact path='/signin' component={ SignInAndSignUpPage } />
           <Route exact path='/user' component={ UserPage } />
+          <Route exact path='/patient' component={ PatientPage } />
         </Switch>
       </div>
     );

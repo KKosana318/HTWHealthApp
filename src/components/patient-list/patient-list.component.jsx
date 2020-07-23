@@ -12,7 +12,7 @@ class PatientList extends React.Component {
   componentDidMount(){
       firestore.collection('users').get()
       //you 'get' data as a snapshot
-      .then(snapshot =>{
+      .then(snapshot => {
         //makes an array of users
         const users =[]  
         //iterates through them and pushes them
@@ -21,7 +21,6 @@ class PatientList extends React.Component {
               users.push(data)
           })
           this.setState({users: users})
-          console.log(snapshot)
       }).catch(error => console.log(error))
   }
 
@@ -29,17 +28,18 @@ class PatientList extends React.Component {
   render() {
     return (
       <div className="PatientList">
-      {
-        this.state.users && 
-        this.state.users.map( user => {
-          return(
-            <div>
-              <p>{user.email}</p>
-            </div>
+        <h1>Patients In Need</h1>
+        {
+          this.state.users && 
+          this.state.users.map( user => {
+            return(
+              <div>
+                <p>{user.email}</p>
+              </div>
           )})
-      }
+        }
       </div>
-    );
+    )
   }
 }
 
