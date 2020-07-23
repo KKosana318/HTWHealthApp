@@ -23,7 +23,7 @@ const Header = ({ currentUser }) => (
         User
       </OptionContainer>
       <OptionContainer to='/home'>
-        Profile
+        Profilee
       </OptionContainer>
       {
         currentUser ?
