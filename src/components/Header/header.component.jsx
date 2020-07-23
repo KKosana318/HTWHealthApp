@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 
-import './header.styles';
+import './header.styles.css';
 
 const Header = () => (
   <div className='header'>
