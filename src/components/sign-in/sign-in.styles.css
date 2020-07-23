@@ -1,8 +1,13 @@
+.sign-in{
+    width: 30%;
+}
+
 .signForm{
     padding: 50px;
     display: inline-block;
     text-align: center;
     box-sizing: border-box;
+    
 }
 
 .cen{
