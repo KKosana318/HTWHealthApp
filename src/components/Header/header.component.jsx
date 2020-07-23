@@ -2,7 +2,6 @@ import React from 'react';
 
 import { auth } from '../../firebase/firebase.utils';
 
-
 import { HeaderContainer, LogoContainer, BrandName, OptionsContainer, OptionContainer, AccountContainer } from './header.styles';
 
 const Header = ({ currentUser }) => (
