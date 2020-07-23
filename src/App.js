@@ -8,6 +8,8 @@ import LandingPage from './pages/landing-page/landing-page.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import UserPage from './pages/user-page/user-page.component';
 import {auth, createUserProfileDocument} from './firebase/firebase.utils';
+import firebase from './firebase/firebase.utils';
+
 import Header from './components/Header/header.component';
 
 
@@ -17,7 +19,7 @@ class App extends React.Component {
 
     this.state = {
       currentUser: null,
-      patients: []
+      patients: null
     }
   }
 

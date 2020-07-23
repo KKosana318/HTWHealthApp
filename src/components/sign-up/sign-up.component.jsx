@@ -62,13 +62,9 @@ class SignUp extends React.Component {
     const { displayName, email, password, confirmPassword } = this.state;
     return (
       <div className='sign-up'>
-        
-        <form className='sign-up-form' onSubmit={this.handleSubmit}>
-          <h2>I do not have an account</h2>
-          <span>Sign up with your email and password</span>
-          <br/>
-          <br/>
-          <label> Display Name </label>
+        <h2 className='title'>I do not have a account</h2>
+        <span>Sign up with your email and password</span>
+        <form className='sign-up-form' onSubmit={this.handleSubmit} autoComplete='off'>
           <FormInput
             type='text'
             name='displayName'
