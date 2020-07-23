@@ -4,8 +4,8 @@ import { auth } from '../../firebase/firebase.utils';
 
 import { HeaderContainer, LogoContainer, BrandName, OptionsContainer, OptionContainer, AccountContainer } from './header.styles';
 
-const Header = ({ currentUser }) => (
-  <HeaderContainer>
+const Header = ({ currentUser, routeProps }) => (
+  <HeaderContainer path={ routeProps }>
     <LogoContainer>
       <BrandName>Brand</BrandName>
     </LogoContainer>
