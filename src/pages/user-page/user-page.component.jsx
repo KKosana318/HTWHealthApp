@@ -1,7 +1,11 @@
 import React from 'react';
 
+import DoctorProfile from '../../components/doctor-profile/doctor-profile.component';
+
 const UserPage = () => (
-  <div>UserPage</div>
+  <div className="user-page">
+    <DoctorProfile/>
+  </div>
 );
 
 export default UserPage;

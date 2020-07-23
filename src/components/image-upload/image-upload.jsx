@@ -1,60 +1,49 @@
 import React, {Component} from 'react';
-import {storage,firestore} from '../../firebase/firebase.utils';
+import firebase from '../../firebase/firebase.utils';
 
 class ImageUpload extends Component{
-    constructor(props) {
+    constructor(props){
         super(props);
-        this.state = {
-            image: null,
-            url: '',
-            progress: 0
+        this.state={
+            files:null
         }
-        this.handleChange = this.handleChange.bind(this);
-        this.handleUpload = this.handleUpload.bind(this);
     }
-    handleChange = e => {
-        if(e.target.files[0]){
-            const {image} = e.target.files[0];
-            this.setState(() => ({image}));
-        }
+    
+    handleChange = (files) => {
+        this.setState({
+            files:files
+        })
     }
 
-    handleUpload = () => {
-        const {image} = this.state;
-        const uploadTask = storage.ref(`images/${image.name}`).put(image);
-        uploadTask.on('state_changed', 
-        (snapshot) => {
-            //progress function
-            const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
-            this.setState({progress});
-        }, 
-        (error) => {
-            console.log(error);
-        }, 
-        (complete) => {
-            //complete function
-            storage.ref('images').child(image.name).getDownloadURL().then(url => {
-                this.setState({url});
+    handleSave = () => {
+        let bucketName = 'profilePictures'
+        let file = this.state.files[0]
+        let storageRef = firebase.storage().ref(`${bucketName}/${file.name}`)
+        let uploadTask = storageRef.put(file)
+        uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, 
+            () => {
+                // eslint-disable-next-line
+                let downloadURl = uploadTask.snapshot.downloadURL
             })
-        });
+    }
+
+    showImage = () => {
+        let storageRef = firebase.storage().ref()
+        // eslint-disable-next-line
+        let spaceRef = storageRef.child('profilePictures/' + this.state.files[0].name)
+        storageRef.child('profilePictures/' + this.state.files[0].name).getDownloadURL().then((url)=> {
+            document.getElementById('new-img').src = url
+        })
     }
 
     render() {
-        const style = {
-            height: '100vh',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center'
-        }
         return (
-            <div style={style}>
-                <progress value={this.state.progress} max="100"/>
-
-                <input type="file" onChange={this.handleChange}/>
-                <button onClick={this.handleUpload}>Upload Profile Picture</button>
-                <br/>
-                <img src={this.state.url} alt = "Uploaded Image" height='100' width='100'></img>
+            <div>
+                <input type="file" onChange={(e) => {this.handleChange(e.target.files)}} />
+                <button onClick={this.handleSave}>Upload Your Profile</button>
+                <button onClick>Show Image</button>
+                {/*eslint-disable-next-line*/}
+                <img id="new-img"/>
             </div>
         )
     }
