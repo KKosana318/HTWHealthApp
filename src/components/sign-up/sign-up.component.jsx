@@ -101,7 +101,6 @@ class SignUp extends React.Component {
             name='password'
             value={password}
             onChange={this.handleChange}
-            
             required
           />
           <label> Confirm Password </label>

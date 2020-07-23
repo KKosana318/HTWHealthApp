@@ -30,9 +30,6 @@ class SignIn extends React.Component{
             alert('Email/Password combination is incorrect!');
             console.log(error);
         }
-
-
-
         this.setState({email: '', password: ''})
     }
 

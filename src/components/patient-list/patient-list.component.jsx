@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { auth, firestore } from '../../firebase/firebase.utils';
+import { firestore } from '../../firebase/firebase.utils';
 
 import './patient-list.styles.css';
 

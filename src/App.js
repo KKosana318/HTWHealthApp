@@ -11,7 +11,6 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import UserPage from './pages/user-page/user-page.component';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
-=======
 
 //import firebase from './firebase/firebase.utils';
 
