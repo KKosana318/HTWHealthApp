@@ -12,8 +12,7 @@ class SignUp extends React.Component {
     super();
 
     this.state = {
-      fName: '',
-      lName: '',
+      displayName: '',
       email: '',
       password: '',
       confirmPassword: ''
@@ -23,7 +22,7 @@ class SignUp extends React.Component {
   handleSubmit = async event => {
     event.preventDefault();
 
-    const { fName, lName, email, password, confirmPassword } = this.state;
+    const { displayName, email, password, confirmPassword } = this.state;
 
     if (password !== confirmPassword) {
       alert("Your passwords do not match!");
@@ -40,11 +39,10 @@ class SignUp extends React.Component {
         password
       );
 
-      await createUserProfileDocument(doctor, { fName, lName });
+      await createUserProfileDocument(doctor, {displayName});
 
       this.setState({
-        fName: '',
-        lName: '',
+        displayName: '',
         email: '',
         password: '',
         confirmPassword: ''
@@ -61,7 +59,7 @@ class SignUp extends React.Component {
   };
 
   render() {
-    const { fName, lName, email, password, confirmPassword } = this.state;
+    const { displayName, email, password, confirmPassword } = this.state;
     return (
       <div className='sign-up'>
         
@@ -69,20 +67,11 @@ class SignUp extends React.Component {
           <h2 className='title'>I do not have an account</h2>
           <span>Sign up with your email and password</span>
           <hr/>
-          <label> First Name </label>
+          <label> Name </label>
           <FormInput
             type='text'
-            name='fName'
-            value={fName}
-            onChange={this.handleChange}
-            required
-          />
-
-          <label> Last Name </label>
-          <FormInput
-            type='text'
-            name='lName'
-            value={lName}
+            name='displayName'
+            value={displayName}
             onChange={this.handleChange}
             required
           />
