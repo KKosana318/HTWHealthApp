@@ -30,9 +30,14 @@ const Header = ({ currentUser }) => (
           <AccountContainer onClick={ () => auth.signOut() }>Sign Out</AccountContainer>
 
           :
-          <AccountContainer to='/signin'>
-            Sign in
+          <div>
+            <AccountContainer to='/signin'>
+              Sign in
           </AccountContainer>
+            <AccountContainer to='/signin'>
+              Sign up
+          </AccountContainer>
+          </div>
       }
     </OptionsContainer>
   </HeaderContainer>

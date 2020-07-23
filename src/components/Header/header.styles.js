@@ -38,6 +38,7 @@ export const OptionContainer = styled(Link)`
 `
 
 export const AccountContainer = styled(Link)`
+  margin: 0 10px;
   padding: 10px 15px;
   color: #5680E9;
   border: 1px solid #5680E9;
