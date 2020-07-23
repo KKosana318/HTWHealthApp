@@ -17,13 +17,13 @@ const Header = ({ currentUser }) => (
         Landing
       </OptionContainer>
       <OptionContainer to='/signin'>
-        Signin/signup
+        Sign in/Sign up
       </OptionContainer>
       <OptionContainer to='/user'>
         User
       </OptionContainer>
-      <OptionContainer to='/home'>
-        Profilee
+      <OptionContainer to='/patient'>
+        Patient
       </OptionContainer>
       {
         currentUser ?
