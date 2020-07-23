@@ -27,7 +27,7 @@ class SignIn extends React.Component{
             await auth.signInWithEmailAndPassword(email, password);
             this.setState({email: '', password: ''});
         } catch(error){
-            
+            alert('Email/Password combination is incorrect!');
             console.log(error);
         }
 

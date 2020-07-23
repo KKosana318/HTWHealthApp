@@ -25,7 +25,11 @@ class SignUp extends React.Component {
     const { displayName, email, password, confirmPassword } = this.state;
 
     if (password !== confirmPassword) {
-      alert("passwords don't match");
+      alert("Your passwords do not match!");
+      return;
+    }
+    if(password.length < 6){
+      alert("Your password must be at least 6 characters in length!");
       return;
     }
 
@@ -58,39 +62,45 @@ class SignUp extends React.Component {
     const { displayName, email, password, confirmPassword } = this.state;
     return (
       <div className='sign-up'>
-        <h2 className='title'>I do not have a account</h2>
-        <span>Sign up with your email and password</span>
+        
         <form className='sign-up-form' onSubmit={this.handleSubmit}>
+          <h2>I do not have an account</h2>
+          <span>Sign up with your email and password</span>
+          <br/>
+          <br/>
+          <label> Display Name </label>
           <FormInput
             type='text'
             name='displayName'
             value={displayName}
             onChange={this.handleChange}
-            label='Display Name'
             required
           />
+
+          <label> Email </label>
           <FormInput
             type='email'
             name='email'
             value={email}
             onChange={this.handleChange}
-            label='Email'
             required
           />
+          <label> Password </label>
           <FormInput
             type='password'
             name='password'
             value={password}
             onChange={this.handleChange}
-            label='Password'
+            
             required
           />
+          <label> Confirm Password </label>
           <FormInput
             type='password'
             name='confirmPassword'
             value={confirmPassword}
             onChange={this.handleChange}
-            label='Confirm Password'
+            
             required
           />
           <CustomButton type='submit'>SIGN UP</CustomButton>
