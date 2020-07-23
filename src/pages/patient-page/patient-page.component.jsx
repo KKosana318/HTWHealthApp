@@ -1,8 +1,11 @@
 import React from 'react';
 
+import PatientList from '../../components/patient-list/patient-list.component';
+
 import './patient-page.styles.scss';
 
 const PatientPage = () => (
+<<<<<<< Updated upstream
     <div className='homepage'>
         <div className='directory-menu'>
             <div className='menu-item'>
@@ -42,6 +45,10 @@ const PatientPage = () => (
                 </div>
             </div>
         </div>
+=======
+    <div className='patient-list'>
+        <PatientList />
+>>>>>>> Stashed changes
     </div>
 )
 
