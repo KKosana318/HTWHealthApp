@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ImageUpload from '../../components/image-upload';
+import ImageUpload from '../../components/image-upload/image-upload';
 
 import './test-page.styles.css';
 

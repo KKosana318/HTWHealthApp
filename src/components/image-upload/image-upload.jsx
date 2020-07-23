@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import storage from '../firebase/firebase.utils';
+import {storage,firestore} from '../../firebase/firebase.utils';
 
 class ImageUpload extends Component{
     constructor(props) {
@@ -40,8 +40,15 @@ class ImageUpload extends Component{
     }
 
     render() {
+        const style = {
+            height: '100vh',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center'
+        }
         return (
-            <div style={imup}>
+            <div style={style}>
                 <progress value={this.state.progress} max="100"/>
 
                 <input type="file" onChange={this.handleChange}/>
