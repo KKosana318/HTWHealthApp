@@ -25,6 +25,9 @@ const Header = ({ currentUser }) => (
       <OptionContainer to='/patient'>
         Patient
       </OptionContainer>
+      <OptionContainer to='/test'>
+        Test
+      </OptionContainer>
       {
         currentUser ?
           <AccountContainer onClick={ () => auth.signOut() }>Sign Out</AccountContainer>

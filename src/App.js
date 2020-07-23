@@ -6,8 +6,10 @@ import './App.css';
 import HomePage from './pages/home-page/home-page.component';
 import PatientPage from './pages/patient-page/patient-page.component';
 import LandingPage from './pages/landing-page/landing-page.component';
+import TestPage from './pages/test-page/test-page.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import UserPage from './pages/user-page/user-page.component';
+
 import {auth, createUserProfileDocument} from './firebase/firebase.utils';
 //import firebase from './firebase/firebase.utils';
 
@@ -60,6 +62,7 @@ class App extends React.Component {
           <Route exact path='/signin' component={ SignInAndSignUpPage } />
           <Route exact path='/user' component={ UserPage } />
           <Route exact path='/patient' component={ PatientPage } />
+          <Route exact path='/test' component={ TestPage } />
         </Switch>
       </div>
     );
