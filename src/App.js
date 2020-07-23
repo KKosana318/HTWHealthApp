@@ -11,6 +11,10 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import UserPage from './pages/user-page/user-page.component';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+<<<<<<< HEAD
+
+=======
+>>>>>>> ba3fa0300d8d0831d850f337953cc5a5dd3ef548
 
 //import firebase from './firebase/firebase.utils';
 
