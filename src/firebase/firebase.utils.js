@@ -36,7 +36,28 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
             console.log('error creating user', error.message);
         }
     }
+      return userRef;
+  };
+  
+  export const addToUserProfileDocument = async (userAuth, additionalData) => {
+    if(!userAuth) return;
 
+    const userRef = firestore.doc(`patients/${userAuth.uid}`);
+
+    const snapShot = await userRef.get();
+
+    if(!snapShot.exists){
+      const {comment} = userAuth;
+      const createdAt = new Date();
+
+      try{
+          await userRef.set({
+              comment,
+          })
+      } catch (error){
+          console.log('error creating user', error.message);
+      }
+    }
     return userRef;
 };
 
