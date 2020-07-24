@@ -11,10 +11,13 @@ import Subscriber from './components/Subscriber';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App
-      apiKey={Config.API_KEY}
-      sessionId={Config.SESSION_ID}
-      token={Config.TOKEN} />
+
+    <App
+    apiKey={Config.API_KEY}
+    sessionId={Config.SESSION_ID}
+    token={Config.TOKEN}/>
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root'));
+  document.getElementById('root')
+);
+
