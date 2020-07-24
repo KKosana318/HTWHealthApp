@@ -33,8 +33,8 @@ class PatientList extends React.Component {
               return(
                   <div className='patient-container'>
                     <h2>{patient.displayName}</h2>
-                    <p>{patient.status}</p>
-                    <p>{patient.email}</p>
+                    <p>Status: {patient.status}</p>
+                    <p>Location: {patient.location}</p>
                   </div>
             )})
           }

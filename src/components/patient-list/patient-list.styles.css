@@ -9,8 +9,8 @@
   .patient-container {
     display: flex;
     flex-direction: column;
-    background-color: #95dada;
-    border: 1px solid grey;
+    background-color: #5ab9ea;
+    border: 1px solid #c1c8e4;
     border-radius: 5px;
     padding: 25px;
     cursor: pointer;
@@ -23,4 +23,5 @@
   
   .patient-container:hover {
     transform: scale(1.05);
+    background-color: #5a75ea;
   }
