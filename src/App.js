@@ -81,7 +81,7 @@ class App extends React.Component {
           <Route exact path='/user' component={ () => <UserPage currentUser={ this.state.currentUser } /> } />
           <Route exact path='/test' component={ TestPage } />
 
-          <Route exact path='/video' component={ VideoPage } />
+          <Route exact path='/video' component={ () => (<VideoPage apiKey ={this.props.apiKey} sessionId ={this.props.sessionId} token ={this.props.token}/>) } />
           <Route exact path='/patient/:patientID' component={ PatientSubmit } />
 
         </Switch>
