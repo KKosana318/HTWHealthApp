@@ -69,7 +69,7 @@ class SignUp extends React.Component {
         <span className = 'cent'>Sign up with your email and password</span>
         <br/>
         <br/>
-          <label>Display Name</label>
+          <label>Userame</label>
           <FormInput
             type='text'
             name='displayName'
