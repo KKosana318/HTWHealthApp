@@ -26,17 +26,13 @@ class PatientSubmit extends React.Component {
   };
 
 
-  componentDidMount() {
-    console.log(this.props.match.params.patientID);
-    // this.setState({ user: })
-  }
 
 
   handleSubmit = async event => {
     event.preventDefault();
 
     const { comment } = this.state;
-    const user = null;
+    let user = null;
 
     try {
       user = await auth.createUserWithEmailAndPassword(

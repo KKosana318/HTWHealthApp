@@ -4,8 +4,8 @@ import { firestore } from '../../firebase/firebase.utils';
 
 import { Link } from 'react-router-dom';
 
-import PatientSubmit from '../../pages//submit-information/patient-sumbit.component';
-import CustomButton from '../custom-button/custom-button.component';
+// import PatientSubmit from '../../pages//submit-information/patient-sumbit.component';
+// import CustomButton from '../custom-button/custom-button.component';
 
 import './patient-list.styles.css';
 
@@ -47,7 +47,7 @@ class PatientList extends React.Component {
               <div className='patient-container'>
                 <img
                   src={ `{patient.imageURL}` }
-                  alt='Picture'
+                  alt='patient'
                 />
                 <h2>{ patient.displayName }</h2>
                 <p>Status: { patient.status }</p>
