@@ -14,6 +14,7 @@ const LandingPage = () => (
   <LandingPageContainer>
     <TopModule>
       <TextContainer>
+        <img src="https://i.ibb.co/hXhmpkq/logo.png" alt="" height='150px' />
         <h1>Join a Global Shift in Healthcare Access</h1>
         <p>Use our technology to bring your medical expertise to communities that lack access to immediate healthcare.</p>
 

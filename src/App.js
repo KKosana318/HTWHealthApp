@@ -11,7 +11,7 @@ import UserPage from './pages/user-page/user-page.component';
 import PatientSubmit from './pages/submit-information/patient-sumbit.component'
 import VideoPage from './pages/video-page/video-page.component';
 
-// import { preloadScript } from 'opentok-react';
+import { preloadScript } from 'opentok-react';
 // import ConnectionStatus from './components/ConnectionStatus';
 // import Publisher from './components/Publisher';
 // import Subscriber from './components/Subscriber';
@@ -90,4 +90,4 @@ class App extends React.Component {
     );
   }
 }
-export default App;
+export default preloadScript(App);
