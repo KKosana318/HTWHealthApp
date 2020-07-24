@@ -1,27 +1,26 @@
 import React from 'react';
 
- // eslint-disable-next-line 
-import { auth, firestore } from '../../firebase/firebase.utils';
+import { firestore } from '../../firebase/firebase.utils';
 
 import './patient-list.styles.css';
 
 class PatientList extends React.Component {
   state = {
-      users: null
+      patients: null
   }
     
   componentDidMount(){
-      firestore.collection('users').get()
+      firestore.collection('patients').get()
       //you 'get' data as a snapshot
       .then(snapshot => {
-        //makes an array of users
-        const users =[]  
+        //makes an array of patients
+        const patients =[]  
         //iterates through them and pushes them
         snapshot.forEach(doc => {
               const data = doc.data()
-              users.push(data)
+              patients.push(data)
           })
-          this.setState({users: users})
+          this.setState({patients: patients})
       }).catch(error => console.log(error))
   }
 
@@ -31,11 +30,11 @@ class PatientList extends React.Component {
       <div className="PatientList">
         <h1>Patients In Need</h1>
         {
-          this.state.users && 
-          this.state.users.map( user => {
+          this.state.patients && 
+          this.state.patients.map( patient => {
             return(
               <div>
-                <p>{user.email}</p>
+                <p>{patient.name} -- {patient.status} -- {patient.email}</p>
               </div>
           )})
         }

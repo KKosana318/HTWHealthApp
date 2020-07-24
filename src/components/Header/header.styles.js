@@ -7,7 +7,11 @@ export const HeaderContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
+  // margin-bottom: ${props => props.path.location.pathname === '/landing' ? '0' : '25px'};
+  position: fixed;
+  top: 0;
+  background-color: white;
+  opacity: 0.9;
   border-bottom: 1px solid #d4d4d4;
 `
 
@@ -34,7 +38,7 @@ export const OptionsContainer = styled.div`
 
 export const OptionContainer = styled(Link)`
   padding: 10px 15px;
-  color: grey;
+  color: #4a4a4a;
 `
 
 export const AccountContainer = styled(Link)`

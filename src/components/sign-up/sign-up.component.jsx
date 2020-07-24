@@ -25,11 +25,7 @@ class SignUp extends React.Component {
     const { displayName, email, password, confirmPassword } = this.state;
 
     if (password !== confirmPassword) {
-      alert("Your passwords do not match!");
-      return;
-    }
-    if(password.length < 6){
-      alert("Your password must be at least 6 characters in length!");
+      alert("passwords don't match");
       return;
     }
 
@@ -62,10 +58,10 @@ class SignUp extends React.Component {
     const { displayName, email, password, confirmPassword } = this.state;
     return (
       <div className='sign-up'>
-        
-        <form className='sign-up-form' onSubmit={this.handleSubmit} autoComplete='off'>
-          <h2 className='title'>I do not have a account</h2>
-          <span>Sign up with your email and password</span>
+        <h2 className='title'>I do not have a account</h2>
+        <span>Sign up with your email and password</span>
+        <form className='sign-up-form' onSubmit={this.handleSubmit}>
+          <label>'Display Name'</label>
           <FormInput
             type='text'
             name='displayName'
@@ -73,8 +69,7 @@ class SignUp extends React.Component {
             onChange={this.handleChange}
             required
           />
-
-          <label> Email </label>
+          <label>'Email'</label>
           <FormInput
             type='email'
             name='email'
@@ -82,22 +77,20 @@ class SignUp extends React.Component {
             onChange={this.handleChange}
             required
           />
-          <label> Password </label>
+          <label>'Password'</label>
           <FormInput
             type='password'
             name='password'
             value={password}
             onChange={this.handleChange}
-            
             required
           />
-          <label> Confirm Password </label>
+          <label>'Confirm Password'</label>
           <FormInput
             type='password'
             name='confirmPassword'
             value={confirmPassword}
             onChange={this.handleChange}
-            
             required
           />
           <CustomButton type='submit'>SIGN UP</CustomButton>
