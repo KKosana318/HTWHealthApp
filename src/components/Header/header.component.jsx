@@ -17,7 +17,7 @@ const Header = ({ currentUser, routeProps }) => (
           </OptionContainer>
           :
           <div>
-            <OptionContainer to='/landing'>
+            <OptionContainer to='/'>
               Home
             </OptionContainer>
           </div>

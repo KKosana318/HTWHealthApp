@@ -11,7 +11,7 @@ import UserPage from './pages/user-page/user-page.component';
 import PatientSubmit from './pages/submit-information/patient-sumbit.component'
 import VideoPage from './pages/video-page/video-page.component';
 
-// import { OTSession, OTStreams, preloadScript } from 'opentok-react';
+import { preloadScript } from 'opentok-react';
 // import ConnectionStatus from './components/ConnectionStatus';
 // import Publisher from './components/Publisher';
 // import Subscriber from './components/Subscriber';
@@ -81,7 +81,7 @@ class App extends React.Component {
           <Route exact path='/user' component={ () => <UserPage currentUser={ this.state.currentUser } /> } />
           <Route exact path='/test' component={ TestPage } />
 
-          <Route exact path='/video' component={ () => (<VideoPage apiKey ={this.props.apiKey} sessionId ={this.props.sessionId} token ={this.props.token}/>) } />
+          <Route exact path='/video' component={ () => (<VideoPage apiKey={ this.props.apiKey } sessionId={ this.props.sessionId } token={ this.props.token } />) } />
           <Route exact path='/patient/:patientID' component={ PatientSubmit } />
 
         </Switch>

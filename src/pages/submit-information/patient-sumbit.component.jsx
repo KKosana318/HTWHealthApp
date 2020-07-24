@@ -7,7 +7,10 @@ import PropTypes from "prop-types";
 
 import { auth, addToUserProfileDocument } from '../../firebase/firebase.utils';
 
+import { Link } from 'react-router-dom';
+
 // import './sign-up.styles.css';
+import './patient-submission.styles.css';
 
 class PatientSubmit extends React.Component {
   constructor(props) {
@@ -66,7 +69,7 @@ class PatientSubmit extends React.Component {
     return (
       <div className='comment'>
         <form className='sign-up-form' onSubmit={ this.handleSubmit }>
-          <h2 className='cent'> Please put in your comments</h2>
+          <h2 className='cent'> Please enter your feedback to your patient.</h2>
           <br />
           <br />
           <br />
@@ -78,7 +81,9 @@ class PatientSubmit extends React.Component {
             onChange={ this.handleChange }
             required
           />
-          <CustomButton type='submit'>SIGN UP</CustomButton>
+          <Link to='/'>
+            <CustomButton type='submit'>SEND FEEDBACK</CustomButton>
+          </Link>
         </form>
       </div>
     );
