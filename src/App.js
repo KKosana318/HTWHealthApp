@@ -8,7 +8,7 @@ import LandingPage from './pages/landing-page/landing-page.component';
 import TestPage from './pages/test-page/test-page.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import UserPage from './pages/user-page/user-page.component';
-import patientsubmit from './pages/submit-information/patient-sumbit.component'
+import PatientSubmit from './pages/submit-information/patient-sumbit.component'
 import VideoPage from './pages/video-page/video-page.component';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
@@ -59,12 +59,13 @@ class App extends React.Component {
       <div className='full-site-content'>
         <Route path='/' component={ (props) => (<Header routeProps={ props } currentUser={ this.state.currentUser } />) } />
         <Switch>
-          <Route exact path='/' component={ HomePage } />
+          <Route exact path='/' component={ () => (<HomePage user={ this.state.currentUser } />) } />
           <Route exact path='/landing' component={ LandingPage } />
           <Route exact path='/signin' component={ SignInAndSignUpPage } />
           <Route exact path='/user' component={ UserPage } />
           <Route exact path='/test' component={ TestPage } />
           <Route exact path='/video' component={ VideoPage } />
+          <Route exact path='/patient/:patientID' component={ PatientSubmit } />
         </Switch>
 
       </div>
