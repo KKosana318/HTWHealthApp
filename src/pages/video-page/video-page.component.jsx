@@ -3,7 +3,7 @@ import React from 'react';
 import './video-page.styles.css';
 
 const VideoPage = () => (
-  <div>jay is ugly</div>
+  <div>jay kys</div>
 );
 
 export default VideoPage;
