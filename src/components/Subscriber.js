@@ -9,7 +9,8 @@ class Subscriber extends React.Component {
     this.state = {
       error: null,
       audio: true,
-      video: true
+      video: true,
+      videoSource: 'camera'
     };
   }
 
@@ -19,6 +20,9 @@ class Subscriber extends React.Component {
 
   setVideo = (video) => {
     this.setState({ video });
+  }
+  changeVideoSource = (videoSource) => {
+    (this.state.videoSource !== 'camera') ? this.setState({videoSource: 'camera'}) : this.setState({ videoSource: 'screen' })
   }
 
   onError = (err) => {

@@ -29,6 +29,23 @@ class VideoPage extends React.Component {
     this.setState({ error: `Failed to connect: ${err.message}` });
   }
   render() {
+<<<<<<< HEAD
+      return (
+            <OTSession
+              apiKey={this.props.apiKey}
+              sessionId={this.props.sessionId}
+              token={this.props.token}
+              eventHandlers={this.sessionEvents}
+              onError={this.onError}>
+              {this.state.error ? <div id="error">{this.state.error}</div> : null}
+              <ConnectionStatus connected={this.state.connected} />
+              <Publisher />
+              <OTStreams>
+              <Subscriber />
+              </OTStreams>
+            </OTSession>
+          );
+=======
     return (
       <OTSession
         apiKey={ this.props.apiKey }
@@ -45,6 +62,7 @@ class VideoPage extends React.Component {
         </OTStreams>
       </OTSession>
     );
+>>>>>>> 60c4994dfb49c2591ad0b47a482b4a87b806efb7
   }
 }
 
