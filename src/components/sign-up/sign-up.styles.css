@@ -5,15 +5,16 @@
 }
 
 .sign-up-form{
+    
     padding: 50px;
     display: inline-block;
     text-align: center;
-    
-   
+    font-family: 'Lato';
 }
 
 .cent{
     display: inline-block;
     text-align: center;
     font-family: 'Lato';
+    font-weight: bold;
 }

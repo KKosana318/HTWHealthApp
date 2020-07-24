@@ -27,17 +27,17 @@ class PatientList extends React.Component {
   
   render() {
     return (
-      <div className="PatientList">
-        <h1>Patients In Need</h1>
-        {
-          this.state.patients && 
-          this.state.patients.map( patient => {
-            return(
-              <div>
-                <p>{patient.name} -- {patient.status} -- {patient.email}</p>
-              </div>
-          )})
-        }
+      <div className='patient-list'>
+          {
+            this.state.patients && this.state.patients.map( patient => {
+              return(
+                  <div className='patient-container'>
+                    <h2>{patient.displayName}</h2>
+                    <p>Status: {patient.status}</p>
+                    <p>Location: {patient.location}</p>
+                  </div>
+            )})
+          }
       </div>
     )
   }

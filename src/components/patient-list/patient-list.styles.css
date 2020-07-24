@@ -1,7 +1,27 @@
+
 .patient-list {
     width: 85vw;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
+  }
+  .patient-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #5ab9ea;
+    border: 1px solid #c1c8e4;
+    border-radius: 5px;
+    padding: 25px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+    margin: 10px ;
+  }
+  
+  .patient-container:hover {
+    transform: scale(1.05);
+    background-color: #5a75ea;
   }
