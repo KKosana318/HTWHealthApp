@@ -7,14 +7,15 @@ import './doctor-profile.styles.css';
 
 class DoctorProfile extends React.Component {
     state = {
-        doctors: null,
+        user: null,
+        doctors: null
     }
       
     componentDidMount(){
 
         firestore.collection('doctors').get().then(snapshot => {
           //makes an array of the
-          const doctors =[]  
+          const doctors =[0]  
           //iterates through them and pushes them
           snapshot.forEach(doc => {
                 const data = doc.data()

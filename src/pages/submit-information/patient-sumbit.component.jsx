@@ -25,10 +25,12 @@ class PatientSubmit extends React.Component {
     history: PropTypes.object.isRequired
   };
 
+
   componentDidMount() {
     console.log(this.props.match.params.patientID);
     // this.setState({ user: })
   }
+
 
   handleSubmit = async event => {
     event.preventDefault();

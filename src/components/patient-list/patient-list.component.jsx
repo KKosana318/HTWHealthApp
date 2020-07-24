@@ -59,6 +59,7 @@ class PatientList extends React.Component {
             )
           })
         }
+
       </div>
     )
   }
