@@ -8,7 +8,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   // margin-bottom: ${props => props.path.location.pathname === '/landing' ? '0' : '25px'};
-  position: fixed;
+  // position: fixed;
   top: 0;
   background-color: white;
   opacity: 0.9;
@@ -28,7 +28,7 @@ color: #5680E9;
 `
 
 export const OptionsContainer = styled.div`
-  width: 50%;
+  // width: 50%;
   height: 100%;
   display: flex;
   align-items: center;

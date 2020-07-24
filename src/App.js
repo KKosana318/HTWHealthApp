@@ -8,13 +8,13 @@ import LandingPage from './pages/landing-page/landing-page.component';
 import TestPage from './pages/test-page/test-page.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import UserPage from './pages/user-page/user-page.component';
-import patientsubmit from './pages/submit-information/patient-sumbit.component'
+import PatientSubmit from './pages/submit-information/patient-sumbit.component'
 import VideoPage from './pages/video-page/video-page.component';
 
-import { OTSession, OTStreams, preloadScript } from 'opentok-react';
-import ConnectionStatus from './components/ConnectionStatus';
-import Publisher from './components/Publisher';
-import Subscriber from './components/Subscriber';
+// import { OTSession, OTStreams, preloadScript } from 'opentok-react';
+// import ConnectionStatus from './components/ConnectionStatus';
+// import Publisher from './components/Publisher';
+// import Subscriber from './components/Subscriber';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
@@ -31,14 +31,14 @@ class App extends React.Component {
       currentUser: null
     }
     this.sessionEvents = {
-    sessionConnected: () => {
-      this.setState({ connected: true });
-    },
-    sessionDisconnected: () => {
-      this.setState({ connected: false });
+      sessionConnected: () => {
+        this.setState({ connected: true });
+      },
+      sessionDisconnected: () => {
+        this.setState({ connected: false });
+      }
     }
   }
-}
 
   unsubscribeFromAuth = null
   componentDidMount() {
@@ -69,14 +69,21 @@ class App extends React.Component {
     return (
 
       <div className='full-site-content'>
-        <Route path='/' component={ (props) => (<Header routeProps={ props } currentUser ={ this.state.currentUser } />) } />
+        <Route path='/' component={ (props) => (<Header routeProps={ props } currentUser={ this.state.currentUser } />) } />
         <Switch>
-          <Route exact path='/' component={ HomePage } />
-          <Route exact path='/landing' component={ LandingPage } />
+          {
+            this.state.currentUser ?
+              <Route exact path='/' component={ () => (<HomePage user={ this.state.currentUser } />) } />
+              :
+              <Route exact path='/' component={ LandingPage } />
+          }
           <Route exact path='/signin' component={ SignInAndSignUpPage } />
-          <Route exact path='/user' component={ UserPage } />
+          <Route exact path='/user' component={ () => <UserPage currentUser={ this.state.currentUser } /> } />
           <Route exact path='/test' component={ TestPage } />
-          <Route exact path='/video' component={ () => (<VideoPage apiKey ={this.props.apiKey} sessionId ={this.props.sessionId} token ={this.props.token}/>) } />
+
+          <Route exact path='/video' component={ VideoPage } />
+          <Route exact path='/patient/:patientID' component={ PatientSubmit } />
+
         </Switch>
 
       </div>

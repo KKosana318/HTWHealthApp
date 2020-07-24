@@ -26,6 +26,11 @@
     background-color: #5a75ea;
   }
 
-  p.uppercase {
+
+  #submit-feedback {
+    font-size: 12px;
+  }
+
+  p.uppercase{
     text-transform: uppercase;
-  }  
+  }

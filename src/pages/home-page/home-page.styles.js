@@ -18,6 +18,15 @@ export const TopModule = styled.div`
     // border: 1px solid red;
   `
 
-export const UpdatesContainer = styled.div``
+export const UpdatesContainer = styled.div`
+  background-color: white;
+  border: 1px solid black;
+  padding: 25px; 
+  margin-bottom: 30px;
+`
 
-export const PatientsContainer = styled.div``
+export const PatientsContainer = styled.div`
+background-color: white;
+border: 1px solid black;
+padding: 25px;
+`

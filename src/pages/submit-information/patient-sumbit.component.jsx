@@ -25,16 +25,14 @@ class PatientSubmit extends React.Component {
     history: PropTypes.object.isRequired
   };
 
-  // componentDidMount() {
-  //   console.log()
-  //   this.setState({ user: })
-  // }
+
+
 
   handleSubmit = async event => {
     event.preventDefault();
 
     const { comment } = this.state;
-    const user = null;
+    let user = null;
 
     try {
       user = await auth.createUserWithEmailAndPassword(
