@@ -8,8 +8,9 @@ import LandingPage from './pages/landing-page/landing-page.component';
 import TestPage from './pages/test-page/test-page.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import UserPage from './pages/user-page/user-page.component';
+import patientsubmit from './pages/submit-information/patient-sumbit.component'
 import VideoPage from './pages/video-page/video-page.component';
-
+import { OTSession, OTStreams, PreloadScript } from 'opentok-react';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 //import firebase from './firebase/firebase.utils';
