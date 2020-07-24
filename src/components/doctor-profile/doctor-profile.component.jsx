@@ -15,7 +15,7 @@ class DoctorProfile extends React.Component {
 
         firestore.collection('doctors').get().then(snapshot => {
           //makes an array of the
-          const doctors =[]  
+          const doctors =[0]  
           //iterates through them and pushes them
           snapshot.forEach(doc => {
                 const data = doc.data()
