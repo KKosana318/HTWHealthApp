@@ -1,19 +1,17 @@
 import React from 'react';
 
-import { firestore } from '../../firebase/firebase.utils';
+import { auth, firestore } from '../../firebase/firebase.utils';
 
 import './doctor-profile.styles.css';
 
 class DoctorProfile extends React.Component {
     state = {
-        doctors: null
+        doctors: null,
     }
       
     componentDidMount(){
 
-        firestore.collection('doctors').get()
-        //you 'get' data as a snapshot
-        .then(snapshot => {
+        firestore.collection('doctors').get().then(snapshot => {
           //makes an array of the
           const doctors =[]  
           //iterates through them and pushes them
@@ -22,7 +20,7 @@ class DoctorProfile extends React.Component {
                 doctors.push(data)
             })
             this.setState({doctors: doctors})
-        }).catch(error => console.log(error))
+        })
     }
   
     
