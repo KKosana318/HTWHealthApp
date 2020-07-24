@@ -50,7 +50,7 @@ class PatientList extends React.Component {
                   alt='patient'
                 />
                 <h2>{ patient.displayName }</h2>
-                <p>Status: <p className='uppercase'>{ patient.status }</p></p>
+                <p>Status: <p className='uppercase'><b>{ patient.status }</b></p></p>
                 <p>Ailments: { patient.p }</p>
                 <p>Location: { patient.location }</p>
                 <Link id='submit-feedback' to={ `patient/${patient.email}` }>
