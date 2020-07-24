@@ -13,9 +13,9 @@ const LandingPage = () => (
       <TextContainer>
         <h1>Join a Global Shift in Healthcare Access</h1>
         <p>Use our technology to bring your medical expertise to communities that lack access to immediate healthcare.</p>
-        <Link activeClass="active" to="test1" spy={ true } smooth={ true } offset={ 50 } duration={ 500 }>
+        {/* <Link activeClass="active" to="test1" spy={ true } smooth={ true } offset={ 50 } duration={ 500 }>
           Test 1
-        </Link>
+        </Link> */}
       </TextContainer>
     </TopModule>
     <FeaturesContainer>

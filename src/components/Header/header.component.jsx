@@ -28,6 +28,9 @@ const Header = ({ currentUser, routeProps }) => (
       <OptionContainer to='/test'>
         Test
       </OptionContainer>
+      <OptionContainer to='/video'>
+        Video
+      </OptionContainer>
       {
         currentUser ?
           <AccountContainer onClick={ () => auth.signOut() }>Sign Out</AccountContainer>
