@@ -71,8 +71,12 @@ class App extends React.Component {
       <div className='full-site-content'>
         <Route path='/' component={ (props) => (<Header routeProps={ props } currentUser={ this.state.currentUser } />) } />
         <Switch>
-          <Route exact path='/' component={ () => (<HomePage user={ this.state.currentUser } />) } />
-          <Route exact path='/landing' component={ LandingPage } />
+          {
+            this.state.currentUser ?
+              <Route exact path='/' component={ () => (<HomePage user={ this.state.currentUser } />) } />
+              :
+              <Route exact path='/' component={ LandingPage } />
+          }
           <Route exact path='/signin' component={ SignInAndSignUpPage } />
           <Route exact path='/user' component={ () => <UserPage currentUser={ this.state.currentUser } /> } />
           <Route exact path='/test' component={ TestPage } />

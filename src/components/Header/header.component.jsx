@@ -7,24 +7,21 @@ import { HeaderContainer, LogoContainer, BrandName, OptionsContainer, OptionCont
 const Header = ({ currentUser, routeProps }) => (
   <HeaderContainer path={ routeProps }>
     <LogoContainer>
-      <BrandName>Brand</BrandName>
+      <BrandName>Panacea</BrandName>
     </LogoContainer>
     <OptionsContainer>
-      <OptionContainer to='/'>
-        Home
-      </OptionContainer>
-      <OptionContainer to='/landing'>
-        Landing
-      </OptionContainer>
-      <OptionContainer to='/signin'>
-        Sign in/Sign up
-      </OptionContainer>
-      <OptionContainer to='/user'>
-        User
-      </OptionContainer>
-      <OptionContainer to='/test'>
-        Test
-      </OptionContainer>
+      {
+        currentUser ?
+          <OptionContainer to='/'>
+            Home
+          </OptionContainer>
+          :
+          <div>
+            <OptionContainer to='/landing'>
+              Home
+            </OptionContainer>
+          </div>
+      }
       <OptionContainer to='/video'>
         Video
       </OptionContainer>
