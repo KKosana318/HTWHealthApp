@@ -31,4 +31,6 @@
     font-size: 12px;
   }
 
-
+  p.uppercase{
+    text-transform: uppercase;
+  }
