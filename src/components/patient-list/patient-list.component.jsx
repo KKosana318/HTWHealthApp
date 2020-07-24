@@ -46,7 +46,8 @@ class PatientList extends React.Component {
             return (
               <div className='patient-container'>
                 <img
-                  src={ `{patient.imageURL}` }
+                  src={"https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png" }
+                  width="180"
                   alt='patient'
                 />
                 <h2>{ patient.displayName }</h2>
