@@ -10,7 +10,7 @@ const Header = ({ currentUser, routeProps }) => (
       <BrandName>Brand</BrandName>
     </LogoContainer>
     <OptionsContainer>
-      <OptionContainer to='/home'>
+      <OptionContainer to='/'>
         Home
       </OptionContainer>
       <OptionContainer to='/landing'>
@@ -22,11 +22,11 @@ const Header = ({ currentUser, routeProps }) => (
       <OptionContainer to='/user'>
         User
       </OptionContainer>
-      <OptionContainer to='/patient'>
-        Patient
-      </OptionContainer>
       <OptionContainer to='/test'>
         Test
+      </OptionContainer>
+      <OptionContainer to='/video'>
+        Video
       </OptionContainer>
       {
         currentUser ?

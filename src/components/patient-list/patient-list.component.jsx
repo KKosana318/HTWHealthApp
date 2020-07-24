@@ -32,6 +32,10 @@ class PatientList extends React.Component {
             this.state.patients && this.state.patients.map( patient => {
               return(
                   <div className='patient-container'>
+                    <img 
+                      src={`{patient.imageURL}`} 
+                      alt='Picture'
+                    />
                     <h2>{patient.displayName}</h2>
                     <p>Status: {patient.status}</p>
                     <p>Location: {patient.location}</p>

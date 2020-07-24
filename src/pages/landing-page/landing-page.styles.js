@@ -58,7 +58,8 @@ export const GetStartedContainer = styled.div`
   }
 
   p {
-    // width: 80%;
+    width: 100%;
+    text-align: center;
     font-size: 30px;
     color: grey;
     font-weight: lighter !important;
