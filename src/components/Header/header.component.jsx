@@ -7,11 +7,7 @@ import { HeaderContainer, LogoContainer, BrandName, OptionsContainer, OptionCont
 const Header = ({ currentUser, routeProps }) => (
   <HeaderContainer path={ routeProps }>
     <LogoContainer>
-<<<<<<< HEAD
-      <BrandName>Pancea</BrandName>
-=======
       <BrandName>Panacea</BrandName>
->>>>>>> 60c4994dfb49c2591ad0b47a482b4a87b806efb7
     </LogoContainer>
     <OptionsContainer>
       {
@@ -21,7 +17,7 @@ const Header = ({ currentUser, routeProps }) => (
           </OptionContainer>
           :
           <div>
-            <OptionContainer to='/landing'>
+            <OptionContainer to='/'>
               Home
             </OptionContainer>
           </div>
