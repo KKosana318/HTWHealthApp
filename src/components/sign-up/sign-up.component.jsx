@@ -83,6 +83,7 @@ class SignUp extends React.Component {
           <br />
           <br />
           <label>Display Name</label>
+
           <FormInput
             type='text'
             name='displayName'
