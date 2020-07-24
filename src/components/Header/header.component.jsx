@@ -7,7 +7,7 @@ import { HeaderContainer, LogoContainer, BrandName, OptionsContainer, OptionCont
 const Header = ({ currentUser, routeProps }) => (
   <HeaderContainer path={ routeProps }>
     <LogoContainer>
-      <BrandName>Brand</BrandName>
+      <BrandName>Pancea</BrandName>
     </LogoContainer>
     <OptionsContainer>
       <OptionContainer to='/'>
@@ -47,4 +47,3 @@ const Header = ({ currentUser, routeProps }) => (
 );
 
 export default Header;
-

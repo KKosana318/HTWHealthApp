@@ -5,8 +5,18 @@ export const HomePageContainer = styled.div`
   flex-direction: column;
   background-color: #f2f5ff;
   padding: 50px;
-  border: 1px solid red;
-`
+//  border: 1px solid red;
+  `
+export const TopModule = styled.div`
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background: linear-gradient(to bottom right, #f2f5ff 50%, white 25%, white 25%);
+    height: 135vh;
+    // border: 1px solid red;
+  `
 
 export const UpdatesContainer = styled.div``
 

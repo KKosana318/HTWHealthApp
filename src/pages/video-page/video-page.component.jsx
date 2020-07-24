@@ -35,13 +35,12 @@ onError = (err) => {
               sessionId={this.props.sessionId}
               token={this.props.token}
               eventHandlers={this.sessionEvents}
-              onError={this.onError}
-              >
+              onError={this.onError}>
               {this.state.error ? <div id="error">{this.state.error}</div> : null}
               <ConnectionStatus connected={this.state.connected} />
               <Publisher />
               <OTStreams>
-                <Subscriber />
+              <Subscriber />
               </OTStreams>
             </OTSession>
           );
