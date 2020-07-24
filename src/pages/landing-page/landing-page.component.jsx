@@ -20,8 +20,8 @@ const LandingPage = () => (
       </TextContainer>
     </TopModule>
     <FeaturesContainer>
-      <TextImageModule name="test1" image={heart  } title={'Remotely diagnose health conditions'} content={ 'Use comprehensive data provided by patients in rural and low-access areas to remotely diagnose health conditions.' } />
-      <TextImageModule image={ bed } title={ 'Address health emergencies' } content={ 'Respond to patients in emergency situations by suggesting treatment options for communities with limited equipment with help from our health analysis AI tools.' } />
+      <TextImageModule name="test1" image={ heart } title={ 'Remotely diagnose health conditions' } content={ 'Use comprehensive data provided by patients in rural and low-access areas to remotely diagnose health conditions.' } />
+      <TextImageModule image={ bed } title={ 'Address health emergencies' } content={ 'Respond to patients in emergency situations by suggesting treatment options for communities with limited equipment.' } />
       <TextImageModule image={ call } title={ 'Check in regularly with patients over video' } content={ 'Use our built-in video conferencing capabilities to chat live with patients for regular check-ups, answering health questions, and addressing minor health concerns.' } />
     </FeaturesContainer>
     <GetStartedContainer>

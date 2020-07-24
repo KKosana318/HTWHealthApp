@@ -7,7 +7,7 @@ import { HeaderContainer, LogoContainer, BrandName, OptionsContainer, OptionCont
 const Header = ({ currentUser, routeProps }) => (
   <HeaderContainer path={ routeProps }>
     <LogoContainer>
-      <BrandName>Panacea</BrandName>
+      <BrandName>   Panacea</BrandName>
     </LogoContainer>
     <OptionsContainer>
       {
