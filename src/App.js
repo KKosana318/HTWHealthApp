@@ -4,12 +4,13 @@ import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
 import HomePage from './pages/home-page/home-page.component';
-import PatientPage from './pages/patient-page/patient-page.component';
 import LandingPage from './pages/landing-page/landing-page.component';
 import TestPage from './pages/test-page/test-page.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import UserPage from './pages/user-page/user-page.component';
+import patientsubmit from './pages/submit-information/patient-sumbit.component'
 import VideoPage from './pages/video-page/video-page.component';
+
 import { OTSession, OTStreams, preloadScript } from 'opentok-react';
 import ConnectionStatus from './components/ConnectionStatus';
 import Publisher from './components/Publisher';
@@ -74,7 +75,6 @@ class App extends React.Component {
           <Route exact path='/landing' component={ LandingPage } />
           <Route exact path='/signin' component={ SignInAndSignUpPage } />
           <Route exact path='/user' component={ UserPage } />
-          <Route exact path='/patient' component={ PatientPage } />
           <Route exact path='/test' component={ TestPage } />
           <Route exact path='/video' component={ () => (<VideoPage apiKey ={this.props.apiKey} sessionId ={this.props.sessionId} token ={this.props.token}/>) } />
         </Switch>

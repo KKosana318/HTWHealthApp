@@ -47,4 +47,5 @@ onError = (err) => {
           );
   }
 }
+
 export default VideoPage;

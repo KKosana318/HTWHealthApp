@@ -7,7 +7,8 @@ import './doctor-profile.styles.css';
 
 class DoctorProfile extends React.Component {
     state = {
-        doctors: null,
+        user: null,
+        doctors: null
     }
       
     componentDidMount(){
