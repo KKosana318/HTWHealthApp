@@ -77,7 +77,7 @@ class App extends React.Component {
               :
               <Route exact path='/' component={ LandingPage } />
           }
-          <Route exact path='/signin' component={ SignInAndSignUpPage } />
+          <Route exact path='/signin' component={ (props) => (<SignInAndSignUpPage props={ props } user={ this.state.currentUser } />) } />
           <Route exact path='/user' component={ () => <UserPage currentUser={ this.state.currentUser } /> } />
           <Route exact path='/test' component={ TestPage } />
 

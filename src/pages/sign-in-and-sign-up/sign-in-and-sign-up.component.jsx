@@ -6,12 +6,22 @@ import SignUp from '../../components/sign-up/sign-up.component'
 
 import './sign-in-and-sign-up.styles.css';
 
-const SignInAndSignUpPage = () => (
-    <div className='sign-in-and-sign-up'>
-        <SignIn />
-        <div className='vert'></div>
-        <SignUp />
-    </div>
-);
+class SignInAndSignUpPage extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {}
+    }
+
+    render() {
+        return (
+            <div className='sign-in-and-sign-up'>
+                <SignIn />
+                <div className='vert'></div>
+                <SignUp />
+            </div>
+        )
+    }
+};
 
 export default SignInAndSignUpPage;

@@ -2,10 +2,11 @@
     display: flex;
     justify-content: center;
     /* width: 80%; */
+    margin-top: 20px;
 }
 
 .vert {
-    border-left: 3px solid red;
+    border-left: 1px solid grey;
     height: 500px;
     
   }

@@ -2,11 +2,12 @@
     width: 80%;
     border: 0px solid transparent;
     border-radius: 3px;
-    border-bottom: 2px solid red;
+    border-bottom: 1px solid grey;
     padding-top:8px;
     padding-bottom: 0px;
     margin-top: 13px;
     margin-bottom: 13px;
+    background: transparent;
 }
 
 .form-input:hover{

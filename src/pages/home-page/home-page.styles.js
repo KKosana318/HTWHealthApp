@@ -8,12 +8,12 @@ export const HomePageContainer = styled.div`
 //  border: 1px solid red;
   `
 export const TopModule = styled.div`
-    padding-top: 70px;
+    // padding-top: 70px;
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
-    background: linear-gradient(to bottom right, #f2f5ff 50%, white 25%, white 25%);
+    // background: linear-gradient(to bottom right, #f2f5ff 50%, blue);
     height: 135vh;
     // border: 1px solid red;
   `
