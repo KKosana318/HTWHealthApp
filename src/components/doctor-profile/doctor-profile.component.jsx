@@ -1,23 +1,15 @@
 import React from 'react';
 
-import { auth, firestore, firebase } from '../../firebase/firebase.utils';
+import { firestore } from '../../firebase/firebase.utils';
 
 import './doctor-profile.styles.css';
 
 class DoctorProfile extends React.Component {
-    constructor(){
-        super();
-
-        this.state = {
-            doctors: null,
-        }
+    state = {
+        doctors: null
     }
       
     componentDidMount(){
-        auth.onAuthStateChanged(user => {
-            this.setState({currentUser:user});
-        })
-
 
         firestore.collection('doctors').get()
         //you 'get' data as a snapshot
@@ -44,7 +36,7 @@ class DoctorProfile extends React.Component {
             this.state.doctors.map( doctor => {
               return(
                 <div>
-                  <p>{doctor.displayName} -- {doctor.email}</p>
+                  <p>{doctor.displayName}</p>
                 </div>
             )})
           }
