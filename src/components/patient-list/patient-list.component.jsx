@@ -33,7 +33,7 @@ class PatientList extends React.Component {
               return(
                   <div className='patient-container'>
                     <img 
-                      src={`{patient.imageURL}`} 
+                      src={`https://robohash.org/${patient.imageURL}?set=set4&size=180x180`}
                       alt='Picture'
                     />
                     <h2>{patient.displayName}</h2>

@@ -61,7 +61,7 @@ class App extends React.Component {
           <Route exact path='/' component={ HomePage } />
           <Route exact path='/landing' component={ LandingPage } />
           <Route exact path='/signin' component={ SignInAndSignUpPage } />
-          <Route exact path='/user' component={ UserPage } />
+          <Route exact path='/user' component={ () => (<UserPage currentUser={this.state.currentUser}/>) } />
           <Route exact path='/patient' component={ PatientPage } />
           <Route exact path='/test' component={ TestPage } />
         </Switch>

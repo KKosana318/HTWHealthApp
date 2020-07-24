@@ -1,47 +1,34 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
-// eslint-disable-next-line
-import { auth, firestore } from '../../firebase/firebase.utils';
+import { UserContext } from "../../providers/user-provider";
+
+import { auth } from '../../firebase/firebase.utils';
 
 import './doctor-profile.styles.css';
 
-class DoctorProfile extends React.Component {
-    state = {
-        doctors: null,
-    }
-      
-    componentDidMount(){
+function DoctorProfile(props) {
 
-        firestore.collection('doctors').get().then(snapshot => {
-          //makes an array of the
-          const doctors =[]  
-          //iterates through them and pushes them
-          snapshot.forEach(doc => {
-                const data = doc.data()
-                doctors.push(data)
-            })
-            this.setState({doctors: doctors})
-        })
-    }
-  
-    
-    render() {
-      return (
-        <div className="doc-prof">
-          <h1>Welcome Doctor </h1>
-          <br></br>
-          {
-            this.state.doctors && 
-            this.state.doctors.map( doctor => {
-              return(
-                <div>
-                  <p>{doctor.displayName}</p>
-                </div>
-            )})
-          }
-        </div>
-      )
-    }
-  }
+       return (
+         <div className = "mx-auto w-11/12 md:w-2/4 py-8 px-4 md:px-8">
+           <div className="flex border flex-col items-center md:flex-row md:items-start border-blue-400 px-3 py-4">
+             <div
+               style={{
+                 background:
+                `url(https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png)  no-repeat center center`,
+                 backgroundSize: "cover",
+                 height: "200px",
+                 width: "200px"
+               }}
+               className="border border-blue-300"
+             ></div>
+             <div className = "md:pl-4">
+             <h2 className = "text-2xl font-semibold">{props.currentUser}</h2>
+             <h3 className = "italic">faruq123@gmail.com</h3>
+             </div>
+           </div>
+           <button className = "w-full py-3 bg-red-600 mt-4 text-white">Sign out</button>
+         </div>
+       )
+    };
   
   export default DoctorProfile;
