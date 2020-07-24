@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Scroll from 'react-scroll';
+//eslint-disable-next-line
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 import TextImageModule from '../../components/text-image-module/text-image-module.component';

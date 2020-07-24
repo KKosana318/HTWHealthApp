@@ -34,7 +34,7 @@ class PatientList extends React.Component {
           this.state.patients.map( patient => {
             return(
               <div>
-                <p>{patient.name} -- {patient.status}</p>
+                <p>{patient.name} -- {patient.status} -- {patient.email}</p>
               </div>
           )})
         }
