@@ -90,4 +90,4 @@ class App extends React.Component {
     );
   }
 }
-export default preloadScript(App);
+export default App;
